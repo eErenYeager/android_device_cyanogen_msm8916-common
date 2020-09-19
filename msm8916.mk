@@ -198,7 +198,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
-    libxml2
+    libxml2 \
+    libaudioclient_shim
 
 # Recovery
 PRODUCT_PACKAGES += \
