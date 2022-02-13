@@ -20,10 +20,10 @@ on enable-low-power
     # enable thermal core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
 
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "0 200000:20000 400000:30000 533333:50000 800000:50000 998400:50000 1094400:50000 1152000:50000"
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 0
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "0 200000:20000 400000:30000 533333:30000 800000:30000 998400:30000 1094400:50000 1152000:50000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 85
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 0
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 800000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 0
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "1 200000:30 533333:80 800000:85 998400:90 1094400:95"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 50000
@@ -47,8 +47,8 @@ on enable-low-power
     # Enable core control
     write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
-    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 95
-    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 80
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 68
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 30
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
     write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 0
     write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4
